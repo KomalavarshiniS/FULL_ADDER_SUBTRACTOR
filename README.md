@@ -65,6 +65,8 @@ Write the detailed procedure here
 
 Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. 
 ```
+FULL ADDER
+
 module experiment4(sum,cout,a,b,cin);
 output sum;
 output cout;
@@ -84,17 +86,40 @@ or(cout,c2,c1);
 endmodule
 ```
 ```
+FULL SUBTRACTOR
+
+module experiment4a (df, bo, a, b, bin);
+output df;
+output bo;
+input a;
+input b;
+input bin;
+wire w1,w2, w3;
+assign w1=a^b;
+assign w2=(~a&b);
+assign w3=(-w1&bin);
+assign df-w1^bin;
+assign bo-w2/w3;
+endmodule
+```
+```
 Developed by:KOMALAVARSHINI.S
 RegisterNumber:24900909
 ```
 
 **RTL Schematic**
 
-![exp3](https://github.com/user-attachments/assets/c6526a53-177e-41e8-9e7e-76b70e4b81fe)
+FULL ADDER
+![exp4](https://github.com/user-attachments/assets/dc4041c9-3a28-44b6-833d-b39b145d01e4)
+FULL SUBTRACTOR
+![exp4a](https://github.com/user-attachments/assets/a9fccf24-3614-4c0c-91c5-250b2f2b6698)
 
 **Output Timing Waveform**
 
-![exp3 (2)](https://github.com/user-attachments/assets/607c346a-bcb9-4368-87c1-d23ef5c665e3)
+FULL ADDER
+![exp4 (2)](https://github.com/user-attachments/assets/0cbd8c54-3b43-426b-8eda-f7c34767b2c7)
+FULL SUBTRACTOR
+![exp4a (2)](https://github.com/user-attachments/assets/93ad6e80-d7ac-4959-adfb-9357bc71291b)
 
 **Result:**
 
